@@ -19,9 +19,12 @@ public class As1_Crop {
 
 
     public String toString(){
-        return name + ",  " + yield + ",  " + units + ",  $" + price + "  " + + acres;
+        return name + ",  " + yield + ",  " + units + ",  " + price + "  "  + acres;
     }//toString
 
+    public void summary(){
+        System.out.println("We have " + yield + " " + units + "s of " + name + " planted on " + acres + " acres. The price for this crop is $" + price + "/" + units);
+    }
     public void setAcres(int acres) {
         this.acres = acres;
     }
