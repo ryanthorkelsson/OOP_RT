@@ -18,6 +18,15 @@ public class Ex3_Client {
 
     }//constructor
 
+    public Ex3_Client( String n , String a, int l,boolean d, double f){
+        name =n;
+        address =a;
+        lawnSize =l;
+        hasDog = d;
+        outstandingFees =f;
+
+    }//constructor
+
     public String toString(){
         return name + "  " + address + "  " + lawnSize + "  " + hasDog + "  " + outstandingFees;
     }
@@ -62,4 +71,19 @@ public class Ex3_Client {
         }
     }
 
-}
+    public String getAddress() {
+        return address;
+    }
+
+    public int getLawnSize() {
+        return lawnSize;
+    }
+
+    public boolean isHasDog() {
+        return hasDog;
+    }
+
+    public double getOutstandingFees() {
+        return outstandingFees;
+    }
+}//class

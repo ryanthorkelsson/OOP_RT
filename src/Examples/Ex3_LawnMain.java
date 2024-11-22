@@ -1,12 +1,15 @@
 package Examples;
 
 import java.util.ArrayList;
+import java.io.*;
 
 public class Ex3_LawnMain {
 
     public static void run(){
 
         ArrayList<Ex3_Client> allClients = new ArrayList<>();
+
+        loadFile("Data/ClientData.csv", allClients);
 
         allClients.add(new Ex3_Client("McDavid","100 Maple Dr", 1000,true));
         allClients.add(new Ex3_Client("Draisaitl","102 Maple Dr", 600,true));
@@ -90,5 +93,24 @@ public class Ex3_LawnMain {
         return -1;
     }//searchByName
 
+    public static void loadFile(String filename, ArrayList<Ex3_Client> list ) {
+
+        try {
+            BufferedReader file = new BufferedReader(new FileReader(filename));
+
+            String dataToRead;
+            while( file.ready()){
+                dataToRead = file.readLine();
+
+                String tempArray[] = dataToRead.split(",");
+
+                list.add( new Ex3_Client(  tempArray[0],tempArray[1], Integer.parseInt(tempArray[4]),Boolean.parseBoolean(tempArray[5]), Double.parseDouble(tempArray[2])   ));
+
+            }
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+    }//end loadFile
 
 }//lawnMain

@@ -25,7 +25,25 @@ public class As1_Crop {
     public void summary(){
         System.out.println("We have " + yield + " " + units + "s of " + name + " planted on " + acres + " acres. The price for this crop is $" + price + "/" + units);
     }
+
+    public double harvest(){
+        double total = price * yield * acres;
+        System.out.println();
+        System.out.println("Harvest value: $" + total);
+        acres = 0;
+        return total;
+
+    }
+
+    public void cropExist(int a){
+        acres += a;
+    }
+
     public void setAcres(int acres) {
         this.acres = acres;
+    }
+
+    public String getName() {
+        return name;
     }
 }
