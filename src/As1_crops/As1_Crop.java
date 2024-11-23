@@ -19,7 +19,7 @@ public class As1_Crop {
 
 
     public String toString(){
-        return name + ",  " + yield + ",  " + units + ",  " + price + "  "  + acres;
+        return "Name: " + name + ",  " +"Yield: " + yield + ",  " +"Units: " + units + ",  " +"Price: $ " + price + "  "  +"Acres planted: " + acres;
     }//toString
 
     public void summary(){
