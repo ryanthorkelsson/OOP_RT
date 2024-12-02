@@ -76,6 +76,10 @@ public class As3_LeagueMain {
             if (choice == 4) {
                 System.out.println("Sort by Points Percentage");
 
+
+
+
+
             }
             if (choice == 5) {
                 System.out.println("Enter Game Info");
@@ -186,6 +190,22 @@ public class As3_LeagueMain {
         }
         return -1;
     }//searchByName
+
+//    public static void selectionSortIntArr(ArrayList list) {
+//        for (int i = 0; i < list.size() - 1; i++) {
+//            int lowestIndex = i;
+//            for (int j = i + 1; j < list.size(); j++) {
+//                if (list.get(j).getWins() < list.get(lowestIndex).getVariable) {
+//                    lowestIndex = j;
+//                }
+//            }
+////swaps the lowest to the beginning
+//            int temp = arr[i];
+//            arr[i] = arr[lowestIndex];
+//            arr[lowestIndex] = temp;
+//
+//        }
+//    }
 
 
     /*
