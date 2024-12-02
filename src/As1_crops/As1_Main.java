@@ -86,11 +86,13 @@ public class As1_Main {
                     System.out.println();
                     System.out.println("What is the average crop yield?");
                     double newYield = Library.input.nextDouble();
+                    Library.input.nextLine();
                     System.out.println("What are the units for this crop?");
                     String newUnits = Library.input.nextLine();
                     System.out.println("What is the price/unit of this crop?");
                     double newPrice = Library.input.nextDouble();
                     allCrops.add(new As1_Crop(plant, newYield,newUnits,newPrice));
+                    allCrops.get(searchByName(allCrops,plant)).setAcres(newAcres);
                 }
 
             }

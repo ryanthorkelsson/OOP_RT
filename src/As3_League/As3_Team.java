@@ -1,5 +1,8 @@
 package As3_League;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 public class As3_Team {
 
     private String name;
@@ -31,7 +34,7 @@ public class As3_Team {
     }
 
     public void list (){
-        System.out.println(city + " " + name + "  Division: " + division + "  Points Percentage: " + pointPct + "  Penalty Kill Percent: " + pkpct);
+        System.out.println(city + " " + name + "  Division: " + division + "  Wins: " + wins +"  Points Percentage: " + pointPct + "  Penalty Kill Percent: " + pkpct);
     }
 
     public int getWins() {
@@ -60,5 +63,16 @@ public class As3_Team {
 
     public double getPkpct() {
         return pkpct;
+    }
+
+    public void setPointPct(double pointPct) {
+        this.pointPct = pointPct;
+    }
+
+    public void setPkpct(double pkpct) {
+        this.pkpct = pkpct;
+    }
+    public void won(){
+        wins +=1;
     }
 }//class

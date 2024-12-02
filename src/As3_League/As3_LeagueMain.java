@@ -1,6 +1,5 @@
 package As3_League;
 
-
 import Examples.Library;
 
 import java.io.*;
@@ -26,8 +25,8 @@ public class As3_LeagueMain {
 
             if (choice == 1) {
                 System.out.println("List of Teams and Stats:");
-                for (int i = 0; i < allTeams.size(); i++) {
-                    allTeams.get(i).list();
+                for (As3_Team allTeam : allTeams) {
+                    allTeam.list();
 
                 }
 
@@ -61,14 +60,13 @@ public class As3_LeagueMain {
                 System.out.println(chooseDiv + ":");
                 int wrongDiv = 0;
 
-                for (int i = 0; i < allTeams.size(); i++) {
-                    if(chooseDiv.equalsIgnoreCase(allTeams.get(i).getDivision())){
-                        allTeams.get(i).divisionSort();
-                    }
-                    else{
+                for (As3_Team allTeam : allTeams) {
+                    if (chooseDiv.equalsIgnoreCase(allTeam.getDivision())) {
+                        allTeam.divisionSort();
+                    } else {
                         wrongDiv += 1;
                     }
-                    if(wrongDiv >24){
+                    if (wrongDiv > 24) {
                         System.out.println("Division not accepted. Try again later.");
                         break;
                     }
@@ -80,7 +78,69 @@ public class As3_LeagueMain {
 
             }
             if (choice == 5) {
-                System.out.println("N/A");
+                System.out.println("Enter Game Info");
+                System.out.println();
+                System.out.println("Which teams Played in the game?");
+                System.out.println("Team 1:");
+                String t1 = Library.input.nextLine();
+                System.out.println("Team 2:");
+                String t2 = Library.input.nextLine();
+
+                System.out.println("Which team won?");
+                String winner = Library.input.nextLine();
+
+                if(t1.equalsIgnoreCase(winner)) {
+                    int teamWin = searchByName(allTeams, t1);
+                    int teamLose = searchByName(allTeams,t2);
+                    allTeams.get(teamWin).won();
+
+                    System.out.println("For the winning team:");
+                    System.out.println("What is their new point Percentage?");
+                    double newPpct = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    System.out.println("What is their new Penalty Kill Percentage?");
+                    double newpkPct = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    allTeams.get(teamWin).setPkpct(newpkPct);
+                    allTeams.get(teamWin).setPointPct(newPpct);
+
+                    System.out.println("For the losing team:");
+                    System.out.println("What is their new point Percentage?");
+                    double newPpct2 = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    System.out.println("What is their new Penalty Kill Percentage?");
+                    double newpkPct2 = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    allTeams.get(teamLose).setPkpct(newpkPct2);
+                    allTeams.get(teamLose).setPointPct(newPpct2);
+
+                }
+                if(t2.equalsIgnoreCase(winner)) {
+                    int teamWin = searchByName(allTeams, t2);
+                    int teamLose = searchByName(allTeams,t2);
+                    allTeams.get(teamWin).won();
+
+                    System.out.println("For the winning team:");
+                    System.out.println("What is their new point Percentage?");
+                    double newPpct = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    System.out.println("What is their new Penalty Kill Percentage?");
+                    double newpkPct = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    allTeams.get(teamWin).setPkpct(newpkPct);
+                    allTeams.get(teamWin).setPointPct(newPpct);
+
+                    System.out.println("For the losing team:");
+                    System.out.println("What is their new point Percentage?");
+                    double newPpct2 = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    System.out.println("What is their new Penalty Kill Percentage?");
+                    double newpkPct2 = Library.input.nextDouble();
+                    Library.input.nextLine();
+                    allTeams.get(teamLose).setPkpct(newpkPct2);
+                    allTeams.get(teamLose).setPointPct(newPpct2);
+                }
+
             }
             if (choice == 6) {
                 break;
@@ -118,20 +178,27 @@ public class As3_LeagueMain {
         }
     }//end loadFile
 
-//    public static void selectionSortDoubleArr(ArrayList arr ) {
-//        for (int i = 0; i < arr.size() - 1; i++) {
-//            int lowestIndex = i;
-//            for (int j = i + 1; j < arr.size(); j++) {
-//                if (arr.get(j).get < arr.get(lowestIndex) {
-//                    lowestIndex = j;
-//                }
-//            }
-////swaps the lowest to the beginning
-//            double temp = arr[i];
-//            arr[i] = arr[lowestIndex];
-//            arr[lowestIndex] = temp;
-//
-//        }
-//    }
-    
+    public static int searchByName(ArrayList<As3_Team> list, String searchTerm ){
+        for (int i = 0; i < list.size(); i++) {
+            if(searchTerm.equalsIgnoreCase( list.get(i).getName() )){
+                return i;
+            }
+        }
+        return -1;
+    }//searchByName
+
+
+    /*
+
+    if(list.get(j).getVariable() < list.get(lowestIndex).getVariable){
+        lowestIndex = j
+
+    //Only swap the objects
+        Team tempTeam = list.get(j);
+        list.set(j, list.get(lowestIndex);
+        list.set(lowestIndex,tempTeam)
+
+     */
+
+
 }//class
