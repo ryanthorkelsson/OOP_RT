@@ -76,7 +76,7 @@ public class As3_LeagueMain {
             if (choice == 4) {
                 System.out.println("Sort by Points Percentage");
 
-
+                sortByPPCT(allTeams);
 
 
 
@@ -191,34 +191,25 @@ public class As3_LeagueMain {
         return -1;
     }//searchByName
 
-//    public static void selectionSortIntArr(ArrayList list) {
-//        for (int i = 0; i < list.size() - 1; i++) {
-//            int lowestIndex = i;
-//            for (int j = i + 1; j < list.size(); j++) {
-//                if (list.get(j).getWins() < list.get(lowestIndex).getVariable) {
-//                    lowestIndex = j;
-//                }
-//            }
-////swaps the lowest to the beginning
-//            int temp = arr[i];
-//            arr[i] = arr[lowestIndex];
-//            arr[lowestIndex] = temp;
-//
-//        }
-//    }
+
+    public static void sortByPPCT (ArrayList<As3_Team> list){
+        for (int i = 0; i < list.size() -1; i++) {
+            int lowestIndex = i;
+            for (int j = i +1; j < list.size(); j++) {
+                if(list.get(j).getPointPct() > list.get(lowestIndex).getPointPct()){
+                    lowestIndex =j;
+                }
+
+            }
+
+            As3_Team tempTeam = list.get(i);
+            list.set(i,list.get(lowestIndex));
+            list.set(lowestIndex,tempTeam);
+
+        }
 
 
-    /*
 
-    if(list.get(j).getVariable() < list.get(lowestIndex).getVariable){
-        lowestIndex = j
-
-    //Only swap the objects
-        Team tempTeam = list.get(j);
-        list.set(j, list.get(lowestIndex);
-        list.set(lowestIndex,tempTeam)
-
-     */
-
+    }
 
 }//class

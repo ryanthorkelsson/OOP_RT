@@ -1,5 +1,7 @@
 package As3_League;
 
+import As1_crops.As3_Player;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -11,6 +13,8 @@ public class As3_Team {
     private double pointPct;
     private int wins;
     private double pkpct;
+
+    private ArrayList<As3_Player> Players = new ArrayList<>();
 
     public As3_Team(String n, String c, String d, double pp, int w, double pk){
         name =n;
@@ -74,5 +78,9 @@ public class As3_Team {
     }
     public void won(){
         wins +=1;
+    }
+
+    public void addPlayer(String name, int ID, int goals, int assists){
+        Players.add(new As3_Player(name, ID, goals, assists));
     }
 }//class
