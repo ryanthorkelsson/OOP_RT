@@ -1,6 +1,5 @@
 import As1_crops.As1_Main;
-import Examples.Ex2_Main;
-import Examples.Ex3_LawnMain;
+import As3_League.As3_LeagueMain;
 
 public class Main {
 
@@ -11,7 +10,8 @@ public class Main {
 //        Ex2_Main.run();
 //        Ex3_LawnMain.run();
 
-        As1_Main.run();
+//        As1_Main.run();
+        As3_LeagueMain.run();
     }
 
 }

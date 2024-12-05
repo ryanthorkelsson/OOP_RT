@@ -1,5 +1,7 @@
 package As1_crops;
 
+
+import Examples.Ex3_Client;
 import Examples.Library;
 
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ public class As1_Main {
 
         while(true) {
 
-            System.out.println("Press 1 for Farm Summary\nPress 2 to for Searching and harvesting crops\nPress 3 for Total Revenue\nPress 4 to Plant a crop.\nPress 5 to exit");
+            System.out.println("Press 1 for Farm Summary\nPress 2 to for Searching and havesting crops\nPress 3 for Total Revenue\nPress 4 to Plant a crop.\nPress 5 to exit");
 
 
             int choice = Library.input.nextInt();
@@ -37,8 +39,8 @@ public class As1_Main {
                 System.out.println("Farm Summary");
                 System.out.println();
 
-                for (As1_Crop allCrop : allCrops) {
-                    allCrop.summary();
+                for (int i = 0; i < allCrops.size(); i++) {
+                    allCrops.get(i).summary();
                 }
 
             }
@@ -83,15 +85,14 @@ public class As1_Main {
                 else{
                     System.out.println();
                     System.out.println("What is the average crop yield?");
-                    double newYield = Library.input.nextInt();
+                    double newYield = Library.input.nextDouble();
                     Library.input.nextLine();
                     System.out.println("What are the units for this crop?");
                     String newUnits = Library.input.nextLine();
                     System.out.println("What is the price/unit of this crop?");
                     double newPrice = Library.input.nextDouble();
-                    allCrops.add(new As1_Crop(plant,newYield,newUnits,newPrice));
-                    int newCropIndex = searchByName(allCrops, plant);
-                    allCrops.get(newCropIndex).setAcres(newAcres);
+                    allCrops.add(new As1_Crop(plant, newYield,newUnits,newPrice));
+                    allCrops.get(searchByName(allCrops,plant)).setAcres(newAcres);
                 }
 
             }
