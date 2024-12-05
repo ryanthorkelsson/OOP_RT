@@ -1,9 +1,6 @@
 package As3_League;
 
-import As1_crops.As3_Player;
-
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class As3_Team {
 

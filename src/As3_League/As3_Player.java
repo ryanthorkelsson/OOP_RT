@@ -1,4 +1,4 @@
-package As1_crops;
+package As3_League;
 
 public class As3_Player {
 
@@ -19,6 +19,10 @@ public class As3_Player {
     }
     public void addAssist(){
         assists += 1;
+    }
+
+    public void PrintMe(){
+        System.out.println("Name: " + name + " / ID: " + ID + "  Goals:" + goalsScored + "  Assists: " + assists);
     }
 
 

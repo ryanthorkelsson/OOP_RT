@@ -213,3 +213,92 @@ public class As3_LeagueMain {
     }
 
 }//class
+
+
+
+/*
+    Players
+
+    Vegas
+        Ivan Barbashev
+        Jack Eichel
+        Mark Stone
+        Noah Hanifin
+        Shea Theodore
+
+    Washington
+        Alex Ovechkin
+        Dylan Strome
+        Rasmus Sandin
+        Tom Wilson
+        Taylor Raddysh
+
+    Dallas
+        Jason Robertson
+        Matt Duchene
+        Tyler Seguin
+        Logan Stankoven
+        Miro Heiskanen
+
+    NYR
+        Artemi Panarin
+        Mika Zibanejad
+        Chris Kreider
+        Adam Fox
+        Jacob Trouba
+
+    Edmonton
+        Leon Draisaitl
+        Connor McDavid
+        Ryan Nugent-Hopkins
+        Evan Bouchard
+        Mattias Ekholm
+
+    Buffalo
+        Tage Thompson
+        Ryan Mcleod
+        Bowen Byram
+        Owen Power
+        Rasmus Dahlin
+    Boston
+        David Pastrnak
+        Brandon Carlo
+        Charlie McAvoy
+        Brad Marchand
+        Charlie Coyle
+
+    Philadelphia
+        Travis Sanheim
+        Jamie Drysdale
+        Travis Konecny
+        Morgan Frost
+        Matvei Michkov
+
+    Detroit
+        Patrick Kane
+        Dylan Larkin
+        Alex DeBrincat
+        Moritz Seider
+        Erik Gustafsson
+
+    Utah
+        Loagn Cooley
+        Clayton Keller
+        Dylan Guenther
+        Michael Kesselring
+        Mikhail Sergachev
+
+    San Jose
+        Will Smith
+        Cody Ceci
+        Macklin Celebrini
+        Jake Walman
+        Logan Couture
+
+    Chicago
+        Connor Bedard
+        Tyler Bertuzzi
+        Taylor Hall
+        Seth Jones
+        Alex Vlasic
+ */
