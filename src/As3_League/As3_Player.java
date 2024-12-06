@@ -21,6 +21,18 @@ public class As3_Player {
         assists += 1;
     }
 
+    public int getGoalsScored() {
+        return goalsScored;
+    }
+
+    public int getAssists() {
+        return assists;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public void PrintMe(){
         System.out.println("Name: " + name + " / ID: " + ID + "  Goals:" + goalsScored + "  Assists: " + assists);
     }

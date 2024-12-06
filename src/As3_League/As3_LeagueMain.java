@@ -14,10 +14,55 @@ public class As3_LeagueMain {
 
         loadFile("Data/TeamData.csv",allTeams);
 
+        //Vegas
+        allTeams.get(0).addPlayer("Ivan Barbashev" , 1,0,0);
+        allTeams.get(0).addPlayer("Mark Stone",2,0,0);
+        //Washington
+        allTeams.get(1).addPlayer("Alex Ovechkin",3,0,0);
+        allTeams.get(1).addPlayer("Dylan Strome",4,0,0);
+        //Dallas
+        allTeams.get(2).addPlayer("Jason Robertson",5,0,0);
+        allTeams.get(2).addPlayer("Miro Heiskanen",6,0,0);
+        //NYR
+        allTeams.get(3).addPlayer("Artemi Panarin",7,0,0);
+        allTeams.get(3).addPlayer("Mika Zibanejad",8,0,0);
+        allTeams.get(3).addPlayer("Adam Fox",9,0,0);
+        //Edmonton
+        allTeams.get(4).addPlayer("Leon Draisaitl",10,0,0);
+        allTeams.get(4).addPlayer("Connor McDavid",11,0,0);
+        allTeams.get(4).addPlayer("Ryan Nugent-Hopkins",12,0,0);
+        allTeams.get(4).addPlayer("Evan Bouchard",13,0,0);
+        allTeams.get(4).addPlayer("Mattias Ekholm",14,0,0);
+        //Buffalo
+        allTeams.get(5).addPlayer("Tage Thompson",15,0,0);
+        allTeams.get(5).addPlayer("Ryan Mcleod",16,0,0);
+        allTeams.get(5).addPlayer("Rasmus Dahlin",17,0,0);
+        //Boston
+        allTeams.get(6).addPlayer("David Pastrnak",18,0,0);
+        allTeams.get(6).addPlayer("Charlie McAvoy",19,0,0);
+        allTeams.get(6).addPlayer("Brad Marchand",20,0,0);
+        //Philidelphia
+        allTeams.get(7).addPlayer("Jamie Drysdale",21,0,0);
+        allTeams.get(7).addPlayer("Matvei Michkov",22,0,0);
+        //Detroit
+        allTeams.get(8).addPlayer("Patrick Kane",23,0,0);
+        allTeams.get(8).addPlayer("Dylan Larkin",24,0,0);
+        //Utah
+        allTeams.get(9).addPlayer("logan Cooley",25,0,0);
+        allTeams.get(9).addPlayer("Mikhail Sergachev",26,0,0);
+        //San Jose
+        allTeams.get(10).addPlayer("Will Smith",27,0,0);
+        allTeams.get(10).addPlayer("Cody Ceci",28,0,0);
+        //Chicago
+        allTeams.get(11).addPlayer("Seth Jones",29,0,0);
+        allTeams.get(11).addPlayer("Connor Bedard",30,0,0);
+
+
+
 
         while(true) {
 
-            System.out.println("Press 1 for List of Teams\nPress 2 to for most and least wins\nPress 3 to view a division\nPress 4 to sort by Points Percentage\nPress 5 to Update Stats\nPress 6 to exit");
+            System.out.println("Press 1 for List of Teams\nPress 2 to for most and least wins\nPress 3 to view a division\nPress 4 to sort by Points Percentage\nPress 5 to Update Stats\nPress 6 to print players\nPress 7 to print Total Team Stats\nPress 8 to Update Player Stats\nPress 9 to exit");
 
 
             int choice = Library.input.nextInt();
@@ -66,7 +111,7 @@ public class As3_LeagueMain {
                     } else {
                         wrongDiv += 1;
                     }
-                    if (wrongDiv > 24) {
+                    if (wrongDiv > 9) {
                         System.out.println("Division not accepted. Try again later.");
                         break;
                     }
@@ -147,6 +192,40 @@ public class As3_LeagueMain {
 
             }
             if (choice == 6) {
+                System.out.println("Print Players");
+                System.out.println();
+                System.out.println("What team's players would you like to see?");
+                String teamPlayers = Library.input.nextLine();
+                int teamFound = searchByName(allTeams,teamPlayers);
+                allTeams.get(teamFound).printPlayers();
+
+
+            }
+            if (choice == 7) {
+                System.out.println("Team Totals");
+
+                System.out.println(allTeams.get(0).getName() + " Goals: " + allTeams.get(0).totalGoals() + "  Assists: " + allTeams.get(0).totalAssists());
+                System.out.println(allTeams.get(1).getName() + " Goals: " + allTeams.get(1).totalGoals() + "  Assists: " + allTeams.get(1).totalAssists());
+                System.out.println(allTeams.get(2).getName() + " Goals: " + allTeams.get(2).totalGoals() + "  Assists: " + allTeams.get(2).totalAssists());
+                System.out.println(allTeams.get(3).getName() + " Goals: " + allTeams.get(3).totalGoals() + "  Assists: " + allTeams.get(3).totalAssists());
+                System.out.println(allTeams.get(4).getName() + " Goals: " + allTeams.get(4).totalGoals() + "  Assists: " + allTeams.get(4).totalAssists());
+                System.out.println(allTeams.get(5).getName() + " Goals: " + allTeams.get(5).totalGoals() + "  Assists: " + allTeams.get(5).totalAssists());
+                System.out.println(allTeams.get(6).getName() + " Goals: " + allTeams.get(6).totalGoals() + "  Assists: " + allTeams.get(6).totalAssists());
+                System.out.println(allTeams.get(7).getName() + " Goals: " + allTeams.get(7).totalGoals() + "  Assists: " + allTeams.get(7).totalAssists());
+                System.out.println(allTeams.get(8).getName() + " Goals: " + allTeams.get(8).totalGoals() + "  Assists: " + allTeams.get(8).totalAssists());
+                System.out.println(allTeams.get(9).getName() + " Goals: " + allTeams.get(9).totalGoals() + "  Assists: " + allTeams.get(9).totalAssists());
+                System.out.println(allTeams.get(10).getName() + " Goals: " + allTeams.get(10).totalGoals() + "  Assists: " + allTeams.get(10).totalAssists());
+                System.out.println(allTeams.get(11).getName() + " Goals: " + allTeams.get(11).totalGoals() + "  Assists: " + allTeams.get(11).totalAssists());
+
+            }
+            if (choice == 8) {
+                System.out.println("Updating Stats");
+                System.out.println();
+                System.out.println("Which Player's stats would you like to update?");
+                String playerChange = Library.input.nextLine();
+
+            }
+            if (choice == 9) {
                 break;
             }
             System.out.println();
@@ -154,9 +233,6 @@ public class As3_LeagueMain {
         }//while
 
         System.out.println("Good bye");
-
-
-
 
 
 
@@ -192,22 +268,23 @@ public class As3_LeagueMain {
     }//searchByName
 
 
-    public static void sortByPPCT (ArrayList<As3_Team> list){
-        for (int i = 0; i < list.size() -1; i++) {
+
+
+    public static void sortByPPCT (ArrayList<As3_Team> list) {
+        for (int i = 0; i < list.size() - 1; i++) {
             int lowestIndex = i;
-            for (int j = i +1; j < list.size(); j++) {
-                if(list.get(j).getPointPct() > list.get(lowestIndex).getPointPct()){
-                    lowestIndex =j;
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(j).getPointPct() > list.get(lowestIndex).getPointPct()) {
+                    lowestIndex = j;
                 }
 
             }
 
             As3_Team tempTeam = list.get(i);
-            list.set(i,list.get(lowestIndex));
-            list.set(lowestIndex,tempTeam);
+            list.set(i, list.get(lowestIndex));
+            list.set(lowestIndex, tempTeam);
 
         }
-
 
 
     }
@@ -215,90 +292,3 @@ public class As3_LeagueMain {
 }//class
 
 
-
-/*
-    Players
-
-    Vegas
-        Ivan Barbashev
-        Jack Eichel
-        Mark Stone
-        Noah Hanifin
-        Shea Theodore
-
-    Washington
-        Alex Ovechkin
-        Dylan Strome
-        Rasmus Sandin
-        Tom Wilson
-        Taylor Raddysh
-
-    Dallas
-        Jason Robertson
-        Matt Duchene
-        Tyler Seguin
-        Logan Stankoven
-        Miro Heiskanen
-
-    NYR
-        Artemi Panarin
-        Mika Zibanejad
-        Chris Kreider
-        Adam Fox
-        Jacob Trouba
-
-    Edmonton
-        Leon Draisaitl
-        Connor McDavid
-        Ryan Nugent-Hopkins
-        Evan Bouchard
-        Mattias Ekholm
-
-    Buffalo
-        Tage Thompson
-        Ryan Mcleod
-        Bowen Byram
-        Owen Power
-        Rasmus Dahlin
-    Boston
-        David Pastrnak
-        Brandon Carlo
-        Charlie McAvoy
-        Brad Marchand
-        Charlie Coyle
-
-    Philadelphia
-        Travis Sanheim
-        Jamie Drysdale
-        Travis Konecny
-        Morgan Frost
-        Matvei Michkov
-
-    Detroit
-        Patrick Kane
-        Dylan Larkin
-        Alex DeBrincat
-        Moritz Seider
-        Erik Gustafsson
-
-    Utah
-        Loagn Cooley
-        Clayton Keller
-        Dylan Guenther
-        Michael Kesselring
-        Mikhail Sergachev
-
-    San Jose
-        Will Smith
-        Cody Ceci
-        Macklin Celebrini
-        Jake Walman
-        Logan Couture
-
-    Chicago
-        Connor Bedard
-        Tyler Bertuzzi
-        Taylor Hall
-        Seth Jones
-        Alex Vlasic
- */

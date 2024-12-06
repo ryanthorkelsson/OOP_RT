@@ -75,9 +75,37 @@ public class As3_Team {
     }
     public void won(){
         wins +=1;
-    }
+    }//won
 
     public void addPlayer(String name, int ID, int goals, int assists){
         Players.add(new As3_Player(name, ID, goals, assists));
-    }
+    }//addPlayer
+    public void printPlayers(){
+        for (int i = 0; i < Players.size(); i++) {
+            Players.get(i).PrintMe();
+        }
+    }//printPlayers
+    public int totalGoals(){
+        int totalGoals =0;
+        for (int i = 0; i <Players.size(); i++) {
+            totalGoals += Players.get(i).getGoalsScored();
+        }
+        return totalGoals;
+    }//totalGoals
+    public int totalAssists(){
+        int totalAssists =0;
+        for (int i = 0; i < Players.size(); i++) {
+            totalAssists += Players.get(i).getAssists();
+        }
+        return totalAssists;
+    }//totalAssists
+
+//    public int searchForPlayer(String n){
+//        for (int i = 0; i < Players.size(); i++) {
+//            if(Players.get(i).getName().equalsIgnoreCase(n)){
+//                return i;
+//            }
+//        }
+//        return 0;
+//    }
 }//class
