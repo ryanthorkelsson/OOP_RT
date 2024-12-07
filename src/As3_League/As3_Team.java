@@ -100,12 +100,21 @@ public class As3_Team {
         return totalAssists;
     }//totalAssists
 
-//    public int searchForPlayer(String n){
-//        for (int i = 0; i < Players.size(); i++) {
-//            if(Players.get(i).getName().equalsIgnoreCase(n)){
-//                return i;
-//            }
-//        }
-//        return 0;
-//    }
+
+    public int search (String n){
+        for (int i = 0; i < Players.size(); i++) {
+            if(Players.get(i).getName().equalsIgnoreCase(n)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void updateGoals (int index){
+        Players.get(index).addGoal();
+    }
+    public void updateAssists (int index){
+        Players.get(index).addAssist();
+    }
+
 }//class
