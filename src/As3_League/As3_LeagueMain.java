@@ -15,47 +15,47 @@ public class As3_LeagueMain {
         loadFile("Data/TeamData.csv",allTeams);
 
         //Vegas
-        allTeams.get(0).addPlayer("Ivan Barbashev" , 1,0,0);
-        allTeams.get(0).addPlayer("Mark Stone",2,0,0);
+        allTeams.get(0).addPlayer("Ivan Barbashev" , 1,13,15);
+        allTeams.get(0).addPlayer("Mark Stone",2,6,16);
         //Washington
-        allTeams.get(1).addPlayer("Alex Ovechkin",3,0,0);
-        allTeams.get(1).addPlayer("Dylan Strome",4,0,0);
+        allTeams.get(1).addPlayer("Alex Ovechkin",3,15,10);
+        allTeams.get(1).addPlayer("Dylan Strome",4,9,26);
         //Dallas
-        allTeams.get(2).addPlayer("Jason Robertson",5,0,0);
-        allTeams.get(2).addPlayer("Miro Heiskanen",6,0,0);
+        allTeams.get(2).addPlayer("Jason Robertson",5,6,11);
+        allTeams.get(2).addPlayer("Miro Heiskanen",6,4,10);
         //NYR
-        allTeams.get(3).addPlayer("Artemi Panarin",7,0,0);
-        allTeams.get(3).addPlayer("Mika Zibanejad",8,0,0);
-        allTeams.get(3).addPlayer("Adam Fox",9,0,0);
+        allTeams.get(3).addPlayer("Artemi Panarin",7,15,20);
+        allTeams.get(3).addPlayer("Mika Zibanejad",8,6,15);
+        allTeams.get(3).addPlayer("Adam Fox",9,1,24);
         //Edmonton
-        allTeams.get(4).addPlayer("Leon Draisaitl",10,0,0);
-        allTeams.get(4).addPlayer("Connor McDavid",11,0,0);
-        allTeams.get(4).addPlayer("Ryan Nugent-Hopkins",12,0,0);
-        allTeams.get(4).addPlayer("Evan Bouchard",13,0,0);
-        allTeams.get(4).addPlayer("Mattias Ekholm",14,0,0);
+        allTeams.get(4).addPlayer("Leon Draisaitl",10,20,18);
+        allTeams.get(4).addPlayer("Connor McDavid",11,14,24);
+        allTeams.get(4).addPlayer("Ryan Nugent-Hopkins",12,4,10);
+        allTeams.get(4).addPlayer("Evan Bouchard",13,6,14);
+        allTeams.get(4).addPlayer("Mattias Ekholm",14,3,8);
         //Buffalo
-        allTeams.get(5).addPlayer("Tage Thompson",15,0,0);
-        allTeams.get(5).addPlayer("Ryan Mcleod",16,0,0);
-        allTeams.get(5).addPlayer("Rasmus Dahlin",17,0,0);
+        allTeams.get(5).addPlayer("Tage Thompson",15,16,7);
+        allTeams.get(5).addPlayer("Ryan Mcleod",16,6,8);
+        allTeams.get(5).addPlayer("Rasmus Dahlin",17,6,13);
         //Boston
-        allTeams.get(6).addPlayer("David Pastrnak",18,0,0);
-        allTeams.get(6).addPlayer("Charlie McAvoy",19,0,0);
-        allTeams.get(6).addPlayer("Brad Marchand",20,0,0);
+        allTeams.get(6).addPlayer("David Pastrnak",18,10,18);
+        allTeams.get(6).addPlayer("Charlie McAvoy",19,5,6);
+        allTeams.get(6).addPlayer("Brad Marchand",20,11,11);
         //Philidelphia
-        allTeams.get(7).addPlayer("Jamie Drysdale",21,0,0);
-        allTeams.get(7).addPlayer("Matvei Michkov",22,0,0);
+        allTeams.get(7).addPlayer("Jamie Drysdale",21,1,3);
+        allTeams.get(7).addPlayer("Matvei Michkov",22,11,16);
         //Detroit
-        allTeams.get(8).addPlayer("Patrick Kane",23,0,0);
-        allTeams.get(8).addPlayer("Dylan Larkin",24,0,0);
+        allTeams.get(8).addPlayer("Patrick Kane",23,3,7);
+        allTeams.get(8).addPlayer("Dylan Larkin",24,12,11);
         //Utah
-        allTeams.get(9).addPlayer("logan Cooley",25,0,0);
-        allTeams.get(9).addPlayer("Mikhail Sergachev",26,0,0);
+        allTeams.get(9).addPlayer("logan Cooley",25,7,15);
+        allTeams.get(9).addPlayer("Mikhail Sergachev",26,7,13);
         //San Jose
-        allTeams.get(10).addPlayer("Will Smith",27,0,0);
-        allTeams.get(10).addPlayer("Cody Ceci",28,0,0);
+        allTeams.get(10).addPlayer("Will Smith",27,5,6);
+        allTeams.get(10).addPlayer("Cody Ceci",28,1,6);
         //Chicago
-        allTeams.get(11).addPlayer("Seth Jones",29,0,0);
-        allTeams.get(11).addPlayer("Connor Bedard",30,0,0);
+        allTeams.get(11).addPlayer("Seth Jones",29,2,8);
+        allTeams.get(11).addPlayer("Connor Bedard",30,5,16);
 
 
 
@@ -195,9 +195,10 @@ public class As3_LeagueMain {
                 System.out.println("Print Players");
                 System.out.println();
                 System.out.println("What team's players would you like to see?");
-                String teamPlayers = Library.input.nextLine();
-                int teamFound = searchByName(allTeams,teamPlayers);
+                String findTeam = Library.input.nextLine();
+                int teamFound = searchByName(allTeams,findTeam);
                 allTeams.get(teamFound).printPlayers();
+
 
 
             }
