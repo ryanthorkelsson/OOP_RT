@@ -37,6 +37,7 @@ public class As3_Player {
         System.out.println("Name: " + name + " / ID: " + ID + "  Goals:" + goalsScored + "  Assists: " + assists);
     }
 
-
-
+    public void setGoalsScored(int goalsScored) {
+        this.goalsScored = goalsScored;
+    }
 }

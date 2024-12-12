@@ -224,26 +224,42 @@ public class As3_LeagueMain {
                 System.out.println();
                 System.out.println("Which Player's stats would you like to update?");
                 String playerChange = Library.input.nextLine();
-                System.out.println("What stat would you like to update?");
-                String statUpdate = Library.input.nextLine();
+                boolean foundPlayer = false;
 
-                if(statUpdate.contains("assists")){
-                    for (int i = 0; i < allTeams.size(); i++) {
-                        int index = allTeams.get(i).search(playerChange);
-                        if (allTeams.get(i).search(playerChange) != -1) {
-                            allTeams.get(i).updateAssists(index);
-                        }
+                for (int i = 0; i < allTeams.size(); i++) {
+                    if(allTeams.get(i).search(playerChange) != -1) {
+                        foundPlayer = true;
+                        break;
+                    }
+                    if(i >=11) {
+                        System.out.println("Can't find player. Try again later.");
                     }
                 }
 
-                if(statUpdate.contains("goals")){
-                    for (int i = 0; i < allTeams.size(); i++) {
-                        int index = allTeams.get(i).search(playerChange);
-                        if (allTeams.get(i).search(playerChange) != -1) {
-                            allTeams.get(i).updateGoals(index);
-                        }
-                    }
-                }
+                if(foundPlayer) {
+                    System.out.println("What stat would you like to update?");
+                    String statUpdate = Library.input.nextLine();
+                           if (statUpdate.contains("assists")) {
+                               for (int i = 0; i < allTeams.size(); i++) {
+                                   int index = allTeams.get(i).search(playerChange);
+                                   if (allTeams.get(i).search(playerChange) != -1) {
+                                       allTeams.get(i).updateAssists(index);
+                                   }
+                               }
+                           }
+
+                           if (statUpdate.contains("goals")) {
+                               for (int i = 0; i < allTeams.size(); i++) {
+                                   int index = allTeams.get(i).search(playerChange);
+                                   if (allTeams.get(i).search(playerChange) != -1) {
+                                       allTeams.get(i).updateGoals(index);
+                                   }
+                               }
+                           }
+                       }
+
+
+
             }
             if (choice == 9) {
                 break;
