@@ -62,7 +62,7 @@ public class As3_LeagueMain {
 
         while(true) {
 
-            System.out.println("Press 1 for List of Teams\nPress 2 to for most and least wins\nPress 3 to view a division\nPress 4 to sort by Points Percentage\nPress 5 to Update Stats\nPress 6 to print players\nPress 7 to print Total Team Stats\nPress 8 to Update Player Stats\nPress 9 to exit");
+            System.out.println("Press 1 for List of Teams\nPress 2 to for most and least wins\nPress 3 to view a division\nPress 4 to sort by Points Percentage\nPress 5 to Update Stats\nPress 6 to Save changes\nPress 7 to print players\nPress 8 to print Total Team Stats\nPress 9 to Update Player Stats\nPress 0 to exit");
 
 
             int choice = Library.input.nextInt();
@@ -192,6 +192,12 @@ public class As3_LeagueMain {
 
             }
             if (choice == 6) {
+                saveFile("Data/TeamData.csv",allTeams);
+                System.out.println("Changes Saved");
+
+            }
+
+            if (choice == 7) {
                 System.out.println("Print Players");
                 System.out.println();
                 System.out.println("What team's players would you like to see?");
@@ -199,10 +205,8 @@ public class As3_LeagueMain {
                 int teamFound = searchByName(allTeams,findTeam);
                 allTeams.get(teamFound).printPlayers();
 
-
-
             }
-            if (choice == 7) {
+            if (choice == 8) {
                 System.out.println("Team Totals");
 
                 System.out.println(allTeams.get(0).getName() + " Goals: " + allTeams.get(0).totalGoals() + "  Assists: " + allTeams.get(0).totalAssists());
@@ -219,7 +223,7 @@ public class As3_LeagueMain {
                 System.out.println(allTeams.get(11).getName() + " Goals: " + allTeams.get(11).totalGoals() + "  Assists: " + allTeams.get(11).totalAssists());
 
             }
-            if (choice == 8) {
+            if (choice == 9) {
                 System.out.println("Updating Stats");
                 System.out.println();
                 System.out.println("Which Player's stats would you like to update?");
@@ -261,17 +265,13 @@ public class As3_LeagueMain {
 
 
             }
-            if (choice == 9) {
+            if (choice == 0) {
                 break;
             }
             System.out.println();
 
         }//while
-
         System.out.println("Good bye");
-
-
-
     }//run
 
     public static void loadFile(String filename, ArrayList<As3_Team> list ) {
@@ -303,7 +303,32 @@ public class As3_LeagueMain {
         return -1;
     }//searchByName
 
+    public static void saveFile(String filename, ArrayList <As3_Team> tempList ) {
+        try {
+            PrintWriter file = new PrintWriter(new FileWriter(filename));
 
+            for (int i = 0; i < tempList.size(); i++) {
+//the next lines are customized for whatever data you are getting.
+                String toSave ="";
+                toSave = tempList.get(i).getName();  //assumes getter method are used for private variables
+                toSave +="," + tempList.get(i).getCity();
+                toSave += "," + tempList.get(i).getDivision();
+                toSave +="," + tempList.get(i).getWins();
+                toSave +="," + tempList.get(i).getPkpct();
+                toSave +="," + tempList.get(i).getPointPct();
+
+//The above lines could be replaced by a call to a carefully made toString() function
+
+                file.println(toSave);
+
+            }
+            file.close();
+        }
+        catch (IOException ex) {
+            System.out.println(ex.toString());
+        }
+
+    }//end saveFile
 
 
     public static void sortByPPCT (ArrayList<As3_Team> list) {
@@ -321,8 +346,6 @@ public class As3_LeagueMain {
             list.set(lowestIndex, tempTeam);
 
         }
-
-
     }
 
 }//class
